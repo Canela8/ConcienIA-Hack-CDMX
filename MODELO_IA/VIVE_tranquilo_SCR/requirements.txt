@@ -1,0 +1,22 @@
+# Dependencias para Análisis de Inundaciones
+# Python 3.8+
+
+# Herramientas de construcción (instalar primero)
+setuptools>=65.0.0
+wheel>=0.38.0
+
+# Visión Computacional (versiones precompiladas para Windows)
+opencv-python>=4.8.0
+opencv-contrib-python>=4.8.0
+
+# YOLOv8 - Ultralytics
+ultralytics>=8.0.0
+
+# Procesamiento Numérico (versión precompilada)
+numpy>=1.24.0
+
+# Visualización
+matplotlib>=3.7.0
+
+# Utilidades
+Pillow>=10.0.0

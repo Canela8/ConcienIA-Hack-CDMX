@@ -1,0 +1,70 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Resultados y datos
+resultados_analisis/
+resultados_colab/
+resultados*/
+*.jpg
+*.jpeg
+*.png
+*.mp4
+*.avi
+!ejemplo_*.jpg
+!ejemplo_*.png
+
+# Modelos YOLO descargados
+*.pt
+yolov8*.pt
+
+# Archivos temporales
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración local
+config_local.py
+.env
+
+# Archivos comprimidos
+*.zip
+*.tar.gz
+*.rar
+
+# Made with Bob

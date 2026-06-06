@@ -1,0 +1,132 @@
+========================================
+SOLUCIÓN AL ERROR DE INSTALACIÓN
+========================================
+
+El error que tuviste es porque numpy necesita compilarse.
+Aquí está la solución paso a paso:
+
+========================================
+PASO 1: LIMPIAR Y EMPEZAR DE NUEVO
+========================================
+
+# Desactivar entorno si está activo
+deactivate
+
+# Eliminar entorno virtual anterior
+Remove-Item -Recurse -Force venv
+
+========================================
+PASO 2: CREAR NUEVO ENTORNO
+========================================
+
+# Crear entorno virtual nuevo
+python -m venv venv
+
+# Activar entorno
+.\venv\Scripts\Activate.ps1
+
+# Deberías ver (venv) al inicio de la línea
+
+========================================
+PASO 3: ACTUALIZAR PIP Y SETUPTOOLS
+========================================
+
+# Actualizar pip (IMPORTANTE)
+python -m pip install --upgrade pip
+
+# Instalar setuptools y wheel
+pip install setuptools wheel
+
+========================================
+PASO 4: INSTALAR DEPENDENCIAS EN ORDEN
+========================================
+
+# Instalar numpy primero (versión precompilada)
+pip install numpy
+
+# Instalar OpenCV
+pip install opencv-python opencv-contrib-python
+
+# Instalar matplotlib
+pip install matplotlib
+
+# Instalar Pillow
+pip install Pillow
+
+# Instalar ultralytics (YOLO)
+pip install ultralytics
+
+========================================
+PASO 5: VERIFICAR INSTALACIÓN
+========================================
+
+# Verificar cada librería
+python -c "import numpy; print('NumPy:', numpy.__version__)"
+python -c "import cv2; print('OpenCV:', cv2.__version__)"
+python -c "import matplotlib; print('Matplotlib OK')"
+python -c "from ultralytics import YOLO; print('YOLO OK')"
+
+# Si todos muestran OK, estás listo!
+
+========================================
+PASO 6: EJECUTAR ANÁLISIS
+========================================
+
+# Asegúrate de tener las imágenes:
+dir *.jpg
+
+# Ejecutar análisis
+python run_analysis.py
+
+========================================
+COMANDOS COMPLETOS (COPIA TODO)
+========================================
+
+deactivate
+Remove-Item -Recurse -Force venv
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install setuptools wheel
+pip install numpy
+pip install opencv-python opencv-contrib-python
+pip install matplotlib
+pip install Pillow
+pip install ultralytics
+python -c "import cv2; print('Todo instalado correctamente!')"
+python run_analysis.py
+
+========================================
+ALTERNATIVA: INSTALAR TODO DE UNA VEZ
+========================================
+
+# Si los comandos anteriores funcionan, puedes usar:
+pip install -r requirements.txt
+
+# Pero si da error, usa la instalación paso a paso de arriba
+
+========================================
+NOTAS IMPORTANTES
+========================================
+
+1. SIEMPRE actualiza pip primero:
+   python -m pip install --upgrade pip
+
+2. Instala setuptools y wheel antes que nada:
+   pip install setuptools wheel
+
+3. Si numpy da error, instala la versión más reciente:
+   pip install numpy --upgrade
+
+4. Asegúrate de que el entorno esté activado:
+   Debes ver (venv) al inicio de la línea
+
+5. Si todo falla, instala una por una en este orden:
+   - setuptools y wheel
+   - numpy
+   - opencv-python
+   - matplotlib
+   - Pillow
+   - ultralytics
+
+========================================

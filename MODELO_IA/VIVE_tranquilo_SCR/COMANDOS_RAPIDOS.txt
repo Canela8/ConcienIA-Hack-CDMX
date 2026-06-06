@@ -1,0 +1,136 @@
+========================================
+COMANDOS RÁPIDOS - COPIAR Y PEGAR
+========================================
+
+UBICACIÓN DE IMÁGENES:
+C:\Users\417ya\Desktop\VIVE_tranquilo_SCR\antes.jpg
+C:\Users\417ya\Desktop\VIVE_tranquilo_SCR\despues.jpg
+
+========================================
+INSTALACIÓN (SOLO PRIMERA VEZ)
+========================================
+
+# 1. Ir al directorio
+cd C:\Users\417ya\Desktop\VIVE_tranquilo_SCR
+
+# 2. Crear entorno virtual
+python -m venv venv
+
+# 3. Activar entorno (si da error, ejecuta el comando de abajo primero)
+.\venv\Scripts\Activate.ps1
+
+# Si da error de permisos, ejecuta esto PRIMERO:
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+# Luego intenta activar de nuevo:
+.\venv\Scripts\Activate.ps1
+
+# 4. Actualizar pip
+python -m pip install --upgrade pip
+
+# 5. Instalar dependencias (tarda 2-3 minutos)
+pip install -r requirements.txt
+
+# 6. Verificar instalación
+python -c "import cv2; print('OpenCV: OK')"
+python -c "from ultralytics import YOLO; print('YOLO: OK')"
+
+========================================
+USO DIARIO (CADA VEZ QUE ANALICES)
+========================================
+
+# 1. Ir al directorio
+cd C:\Users\417ya\Desktop\VIVE_tranquilo_SCR
+
+# 2. Activar entorno
+.\venv\Scripts\Activate.ps1
+
+# 3. Verificar que las imágenes están ahí
+dir *.jpg
+
+# 4. Ejecutar análisis
+python run_analysis.py
+
+# 5. Ver resultados
+explorer resultados_analisis
+
+# 6. Abrir imagen principal
+start resultados_analisis\analisis_completo.png
+
+# 7. Desactivar entorno cuando termines
+deactivate
+
+========================================
+COMANDOS ÚTILES
+========================================
+
+# Ver archivos JPG en el directorio
+dir *.jpg
+
+# Ver contenido de la carpeta de resultados
+dir resultados_analisis
+
+# Abrir carpeta de resultados
+explorer resultados_analisis
+
+# Abrir imagen de análisis
+start resultados_analisis\analisis_completo.png
+
+# Ver métricas JSON
+type resultados_analisis\metricas.json
+
+# Limpiar resultados anteriores
+Remove-Item -Recurse -Force resultados_analisis
+
+========================================
+SOLUCIÓN RÁPIDA DE PROBLEMAS
+========================================
+
+# Error: "python no se reconoce"
+# Solución: Instala Python desde python.org
+
+# Error: "No se encontraron las imágenes"
+# Solución: Verifica que antes.jpg y despues.jpg estén en:
+# C:\Users\417ya\Desktop\VIVE_tranquilo_SCR\
+
+# Error: "ModuleNotFoundError: No module named 'cv2'"
+# Solución: Activa el entorno virtual primero
+.\venv\Scripts\Activate.ps1
+
+# Error: "Scripts de ejecución deshabilitados"
+# Solución: Ejecuta esto
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+========================================
+EJEMPLO COMPLETO DE USO
+========================================
+
+# Copia y pega estos comandos uno por uno:
+
+cd C:\Users\417ya\Desktop\VIVE_tranquilo_SCR
+.\venv\Scripts\Activate.ps1
+python run_analysis.py
+explorer resultados_analisis
+deactivate
+
+========================================
+NOTAS IMPORTANTES
+========================================
+
+1. Las imágenes DEBEN llamarse:
+   - antes.jpg
+   - despues.jpg
+
+2. Las imágenes DEBEN estar en:
+   C:\Users\417ya\Desktop\VIVE_tranquilo_SCR\
+
+3. SIEMPRE activa el entorno antes de ejecutar:
+   .\venv\Scripts\Activate.ps1
+
+4. Verás (venv) al inicio cuando esté activado:
+   (venv) PS C:\Users\417ya\Desktop\VIVE_tranquilo_SCR>
+
+5. Desactiva el entorno cuando termines:
+   deactivate
+
+========================================
